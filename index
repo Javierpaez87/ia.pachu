@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IA Pachu</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px 60px;
+      background-image: url('https://static.vecteezy.com/system/resources/previews/029/571/009/non_2x/vegetarian-chef-cook-background-restaurant-wallpaper-vibrant-gastronomy-backdrop-photo.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .header-top {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      border-radius: 30px;
+      box-shadow: 0 0 15px #000000;
+      z-index: 1000;
+    }
+
+    .header-top img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #fff;
+    }
+
+    .header-top h2 {
+      margin: 0;
+      font-weight: 900;
+      font-size: 1.8rem;
+      color: #ffffff;
+      text-shadow: 0 0 6px #000;
+    }
+
+    .main-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin-top: 100px;
+      object-fit: cover;
+      background: #fff;
+    }
+
+    h1 {
+      font-weight: 800;
+      font-size: 2.3rem;
+      margin: 20px 0 10px;
+      text-shadow: 0 0 10px #000;
+      text-align: center;
+    }
+
+    .slogan {
+      font-size: 1rem;
+      color: #ffe;
+      max-width: 500px;
+      text-align: left;
+      margin-bottom: 30px;
+      text-shadow: 0 0 6px #000;
+    }
+
+    .option {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 18px 30px;
+      border-radius: 12px;
+      margin: 12px 0;
+      max-width: 400px;
+      cursor: pointer;
+      font-weight: 700;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .option:hover {
+      background: rgba(0, 0, 0, 0.8);
+      transform: translateY(-3px);
+    }
+
+    .interaction {
+      margin-top: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .interaction input {
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .interaction button {
+      background: #ffcc00;
+      color: #1b1b1b;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .final-response {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      background: #ffffffd9;
+      color: #1b1b1b;
+      padding: 10px;
+      border-radius: 12px;
+      text-align: center;
+      display: none;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .slogan {
+        font-size: 0.95rem;
+        max-width: 90vw;
+      }
+      .option, .interaction, .final-response {
+        max-width: 90vw;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-top">
+    <img src="https://github.com/Javierpaez87/TeamData/raw/main/Captura%20de%20Pantalla%202025-06-08%20a%20la%28s%29%2020.52.43.png" alt="IA Pachu Logo" />
+    <h2>IA Pachu</h2>
+  </div>
+
+  <img src="https://github.com/Javierpaez87/TeamData/raw/main/Captura%20de%20Pantalla%202025-06-08%20a%20la%28s%29%2020.52.43.png" alt="IA Pachu Logo" class="main-img" />
+
+  <h1>Hola, soy IA Pachu, y te ayudo a pensar qué comemos hoy.</h1>
+  <p class="slogan">
+    Llegó la solución digital para ese problema diario que es un dolor de cabeza en todos los hogares: <em>"¿Qué comemos hoy?"</em> IA Pachu te ayuda.
+  </p>
+
+  <!-- Opción 1 -->
+  <div class="option" onclick="mostrar('interaccion1')">1. Pachu te ayuda con lo que tenés en la heladera</div>
+  <div class="interaction" id="interaccion1">
+    <label>¿Qué tenés en la heladera?</label>
+    <input type="text" placeholder="Ej: tomate, queso, huevo">
+    <button onclick="mostrarPizza(this)">Ver recomendación</button>
+    <div class="final-response">Lo mejor es pedir una pizza en Costa Sur!</div>
+  </div>
+
+  <!-- Opción 2 -->
+  <div class="option" onclick="mostrar('interaccion2')">2. Pachu te ayuda con los deliverys cercanos</div>
+  <div class="interaction" id="interaccion2">
+    <div class="final-response" style="display:block;">Lo mejor es pedir una pizza en Costa Sur!</div>
+  </div>
+
+  <!-- Opción 3 -->
+  <div class="option" onclick="mostrar('interaccion3')">3. Pachu te sorprende</div>
+  <div class="interaction" id="interaccion3">
+    <div class="final-response" style="display:block;">Lo mejor es pedir una pizza en Costa Sur!</div>
+  </div>
+
+  <!-- Opción 4 -->
+  <div class="option" onclick="mostrar('interaccion4')">4. Pachu te ayuda a decidir a partir de algunas indicaciones</div>
+  <div class="interaction" id="interaccion4">
+    <label>¿Qué te gustaría comer? Pastas, carnes, gastronomía italiana...</label>
+    <input type="text" placeholder="Ej: pastas, carne de cerdo, vegetales">
+    <button onclick="mostrarPizza(this)">Ver recomendación</button>
+    <div class="final-response">Lo mejor es pedir una pizza en Costa Sur!</div>
+  </div>
+
+  <script>
+  function mostrar(id) {
+    document.querySelectorAll('.interaction').forEach(el => el.style.display = 'none');
+    document.getElementById(id).style.display = 'flex';
+  }
+
+  function mostrarPizza(button) {
+    google.script.run.withSuccessHandler(function(responseHTML) {
+      const response = button.nextElementSibling;
+      response.style.display = 'block';
+      response.innerHTML = responseHTML; // inserta HTML para que el link funcione
+    }).getFinalResponse();
+  }
+  </script>
+
+</body>
+<footer style="margin-top: 40px; color: #fff8dc; font-size: 0.9rem; text-align: center; text-shadow: 0 0 6px #000;">
+  Todos los derechos reservados. Hecho con amor en Junín de los Andes, Neuquén.
+</footer>
+</html>
