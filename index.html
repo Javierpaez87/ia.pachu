@@ -195,24 +195,22 @@
     <div class="final-response"></div>
   </div>
 
-  <script>
-    <script>
+<script>
   console.log('Pachu JS cargado 🚀');
-  function mostrar(id) { … }
-  function mostrarPizza(button) { … }
-</script>
-    function mostrar(id) {
-      document.querySelectorAll('.interaction').forEach(el => el.style.display = 'none');
-      document.getElementById(id).style.display = 'flex';
-    }
 
-    function mostrarPizza(button) {
-      const response = button.nextElementSibling;
-      response.style.display = 'block';
-      response.innerHTML =
-        'Lo mejor es pedir una pizza en <a href="https://maps.app.goo.gl/PxnzwdxJBjyHAw6T7" target="_blank" style="color:#ffcc00; text-decoration: underline;">Costa Sur! 🍕</a>';
-    }
-  </script>
+  function mostrar(id) {
+    document.querySelectorAll('.interaction').forEach(el => el.style.display = 'none');
+    document.getElementById(id).style.display = 'flex';
+  }
+
+  function mostrarPizza(button) {
+    const response = button.nextElementSibling;
+    response.style.display = 'block';
+    response.innerHTML =
+      'Lo mejor es pedir una pizza en <a href="https://maps.app.goo.gl/PxnzwdxJBjyHAw6T7" target="_blank" style="color:#ffcc00; text-decoration: underline;">Costa Sur! 🍕</a>';
+  }
+</script>
+
 
 </body>
 <footer style="margin-top: 40px; color: #fff8dc; font-size: 0.9rem; text-align: center; text-shadow: 0 0 6px #000;">
