@@ -171,7 +171,7 @@
     <label>¿Qué tenés en la heladera?</label>
     <input type="text" placeholder="Ej: tomate, queso, huevo">
     <button onclick="mostrarPizza(this)">Ver recomendación</button>
-    <div class="final-response">Lo mejor es pedir una pizza en Costa Sur!</div>
+    <div class="final-response"></div>
   </div>
 
   <!-- Opción 2 -->
@@ -192,22 +192,21 @@
     <label>¿Qué te gustaría comer? Pastas, carnes, gastronomía italiana...</label>
     <input type="text" placeholder="Ej: pastas, carne de cerdo, vegetales">
     <button onclick="mostrarPizza(this)">Ver recomendación</button>
-    <div class="final-response">Lo mejor es pedir una pizza en Costa Sur!</div>
+    <div class="final-response"></div>
   </div>
 
   <script>
-  function mostrar(id) {
-    document.querySelectorAll('.interaction').forEach(el => el.style.display = 'none');
-    document.getElementById(id).style.display = 'flex';
-  }
+    function mostrar(id) {
+      document.querySelectorAll('.interaction').forEach(el => el.style.display = 'none');
+      document.getElementById(id).style.display = 'flex';
+    }
 
-  function mostrarPizza(button) {
-    google.script.run.withSuccessHandler(function(responseHTML) {
+    function mostrarPizza(button) {
       const response = button.nextElementSibling;
       response.style.display = 'block';
-      response.innerHTML = responseHTML; // inserta HTML para que el link funcione
-    }).getFinalResponse();
-  }
+      response.innerHTML =
+        'Lo mejor es pedir una pizza en <a href="https://maps.app.goo.gl/PxnzwdxJBjyHAw6T7" target="_blank" style="color:#ffcc00; text-decoration: underline;">Costa Sur! 🍕</a>';
+    }
   </script>
 
 </body>
